@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46fca0fc240f4f3f989b84a221b39249" Name="Diagram1">
+        <EntityTypeShape EntityType="TshidiDatabaseModel.AuditTrail" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Capture_Collect" Width="1.5" PointX="5.25" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Company" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Customer" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Customer_Order" Width="1.5" PointX="3" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Customer_Order_Line" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Delivery" Width="1.5" PointX="8.25" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Delivery_Address" Width="1.5" PointX="6" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Design" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Design_Line" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Employee" Width="1.5" PointX="3.75" PointY="44.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Job_Type" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Order_Status" Width="1.5" PointX="0.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Permission" Width="1.5" PointX="5.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Permission_Line" Width="1.5" PointX="7.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Position" Width="1.5" PointX="3.5" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Product_Category" Width="1.5" PointX="1.5" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Product_Size" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Product_Type" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Province" Width="1.5" PointX="7.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Quotation" Width="1.5" PointX="6" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Quotation_Line" Width="1.5" PointX="8.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Quotation_Request" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Quotation_Request_Line" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Quotation_Status" Width="1.5" PointX="3.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Return_Customer_Order" Width="1.5" PointX="8.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Return_Customer_Order_Line" Width="1.5" PointX="10.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Supplier" Width="1.5" PointX="3" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Supplier_Order" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Supplier_Order_Line" Width="1.5" PointX="7.5" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Supplier_Order_Status" Width="1.5" PointX="5.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.sysdiagram" Width="1.5" PointX="7.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Template" Width="1.5" PointX="1.5" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Template_Position" Width="1.5" PointX="5.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.User" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.User_Role" Width="1.5" PointX="1.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="TshidiDatabaseModel.Web_Link" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_AuditTrail_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Capture_Collect_Customer_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Design_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Request_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Customer_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Order_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Delivery_Customer_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Design" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Design1" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Product_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Product_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Quotation_Line" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Web_Link" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Customer_Order_Line_Web_Link1" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Return_Customer_Order_Line_Customer_Order_Line" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Supplier_Order_Line_Customer_Order_Line" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Delivery_Delivery_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Delivery_Order_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Design_Line_Design" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Design_Product_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Line_Design" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Line_Design1" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Request_Line_Design" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Design_Line_Job_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Design_Line_Template_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Employee_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Supplier_Order_Order_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Permission_Line_Permission" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Permission_Line_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Template_Position_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Product_Type__Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Line_Product_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Request_Line_Product_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Product_Type__Template" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Line_Product_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Request_Line_Product_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Supplier_Order_Line_Product_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Line_Quotation" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Quotation_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Line_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Line_Web_Link" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Request_Line_Quotation_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Request_Line_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Quotation_Request_Line_Web_Link" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Return_Customer_Order_Line_Return_Customer_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Supplier_Order_Line_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Supplier_Web_Link" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Supplier_Order_Line_Supplier_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_Template_Position_Template" ManuallyRouted="false" />
+        <AssociationConnector Association="TshidiDatabaseModel.FK_User_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

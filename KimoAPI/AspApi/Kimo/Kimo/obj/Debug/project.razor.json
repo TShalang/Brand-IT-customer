@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\Tshidi\\Desktop\\Group_11 - Del_08\\brand-it\\AspApi\\Kimo\\Kimo\\Kimo.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
