@@ -1,0 +1,271 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="main-container">
+    <div class="container">
+      <h1 style="font-size: 35px;">Quotations</h1>
+      <br>
+      <div class="wrapper">
+        <table class="table table-bordered table-striped" style="color: white;">
+          <thead class="thead-dark">
+            <th>Date</th>
+            <th>Quote Status</th>
+            <th>QuoteTotal</th>
+            <th>View Details</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let quote of QuoteList">
+              <td>{{quote.Date | date}}</td>
+
+              <td>{{quote.QuoteStatus}}</td>
+              <td>{{quote.QuoteTotal | currency: 'R '}}</td>
+              <td><button class="tfunction " (click)="QuoteDetails(quote.Quote_ID)" type="button"
+                  class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#quotationdetail">View
+                  Quotation</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--Modal-->
+<div id="quotationdetail" class="modal fade" role="dialog">
+  <form #QRdetails="ngForm">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Quotation Details</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+
+          <div>
+            <section class="mt-2 container" style="color: black; width: 950px;">
+              <div class="row">
+                <div class="column">
+                  <img src="../../assets/Images/Kimo.png" alt="">
+
+                </div>
+
+                <div class="column ml-5">
+                  Vat no: 4640258077 <br>
+                  PO BOX 39670 <br>
+                  GARSFONTEUN EAST <br>
+                  PRETORIA <br>
+                  <br>
+                  0060
+                </div>
+                <div class="column " style="margin-left: 150px;">
+
+                  786 JAN SHOBA ST. BROOKLYN, PTA <br>
+                  EMAIL: info@kimo.co.za <br>
+                  TEL : 012 751 6686/082 451 8711
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+
+                <div class="mt-4 column ml-4" *ngFor="let detail of QuoteList; let i=index">
+                  <div *ngIf='i==0' style="color: black;">
+                    <h3 style="color: blue;">To:</h3>
+                    <label>{{detail.CustomerName}}</label><br>
+                    <label>{{detail.CustomerNumber}}</label><br>
+                    <label>{{detail.CustomerEmail}}</label><br>
+                  </div>
+                </div>
+                <!-- <div>
+                  <label>{{RequestList.Date | date}}</label><br>
+                  <label style="margin-right: 10px;">{{RequestList.CustomerName}}</label><br>
+                  <label style="margin-right: 10px;">{{RequestList.CustomerNumber}}</label><br>
+                  <label style="margin-right: 10px;">{{RequestList.CustomerEmail}}</label><br>
+                </div> -->
+                <div class="column mt-4" style="margin-left: 100px;" *ngFor="let detail of QuoteList; let i=index">
+                  <div *ngIf='i==0' style="color: black;">
+                    <h3 style="color: blue;">Date Issued:</h3>
+                    <label>{{detail.Date | date: 'dd/MM/yyyy'}}</label><br>
+                  </div>
+
+                </div>
+
+                <div class="column mt-4 " style="margin-left: 100px;" *ngFor="let detail of QuoteList; let i=index">
+                  <div *ngIf='i==0' style="color: black;">
+                    <h3 style="color: blue;">Quote Number:</h3>
+                    <label>INV00{{detail.Quote_ID}}</label><br>
+                    <br><br><br>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </section>
+            <section class=" container mt-3" style="width: 950px; color: black;">
+
+              <table class="table table-hover">
+                <thead>
+                  <th>ProductType</th>
+                  <th>Description</th>
+                  <th>Quantity</th>
+                  <th>VAT %</th>
+                  <th>Price</th>
+                  <th>Incl. Total</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let detail of CurrentQuoteLines">
+                    <td>{{detail.Product_Type}}</td>
+                    <td>{{detail.Description}}</td>
+                    <td>{{detail.Quantity}}</td>
+                    <td>15.00%</td>
+                    <td>{{detail.Price | currency: 'R '}}</td>
+                    <td>{{detail.Total | currency: 'R '}}</td>
+
+                  </tr>
+               
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>Total VAT:</b> </td>
+                    <td>{{totalVat |currency: 'R '}}</td>
+                   
+                  </tr>
+
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b> Total</b></td>
+                    <td>{{totalPrice | currency: 'R '}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div>
+<table>
+  
+</table>
+         
+              </div>
+
+              <!-- <button (click)="Submit()" routerLink="/quotationrequest"> Generate Quote</button> -->
+            </section>
+          </div>
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success ml-2" *ngIf="!isShow && status!=1" (click)="AcceptQuotation()">Accept
+            Quote</button>
+          <form #form action="https://sandbox.payfast.co.za/eng/process" method="POST">
+            <input type="hidden" name="merchant_id" value="10000100">
+            <input type="hidden" name="merchant_key" value="46f0cd694581a">
+            <input type="hidden" name="return_url" value="https://tshalang.github.io/Success/">
+            <input type="hidden" name="cancel_url" value="https://tshalang.github.io/Success/">
+            <input type="hidden" name="amount" value="{{this.totalPrice}}">
+            <input type="hidden" name="item_name" value="KimoSource Order">
+            <input type="hidden" name="signature" value="{{MD5string}}">
+
+            <button type="submit" class="btn btn-info" *ngIf="isShow" (click)="form.submit() ">Pay Now</button>
+            <button class="btn btn-danger ml-2" *ngIf="!isShow && status!=1" data-dismiss="modal">Reject Quote</button>
+
+          </form>
+
+
+
+
+
+
+
+
+          <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/checkout">Accept
+            Quotation</button> -->
+
+          <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="AcceptQuotation()">Accept
+              Quotation</button> -->
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!--Modal-->
+<!-- <div id="quotationdetail" class="modal fade" role="dialog">
+  <form #QRdetails="ngForm">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Quotation Details</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-striped" >
+            <thead class="thead-dark">
+              <th>ProductType</th>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let detail of CurrentQuoteLines">
+                <td>{{detail.Product_Type}}</td>
+                <td>{{detail.Description}}</td>
+                <td>{{detail.Quantity}}</td>
+                <td>R {{detail.Price}}.00</td>
+                <td>R {{detail.Total}}.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <form #form action="https://sandbox.payfast.co.za/eng/process" method="POST">
+            <input type="hidden" name="merchant_id" value="10000100">
+            <input type="hidden" name="merchant_key" value="46f0cd694581a">
+            <input type="hidden" name="return_url" value="https://tshalang.github.io/Success/">
+            <input type="hidden" name="cancel_url" value="https://tshalang.github.io/Success/">
+            <input type="hidden" name="amount" value="{{this.totalPrice}}">
+            <input type="hidden" name="item_name" value="KimoSource Order">
+            <input type="hidden" name="signature" value="{{MD5string}}">
+            <button type="submit" class="btn btn-success " (click)="form.submit() ">Accept & Pay</button>
+            <button class="btn btn-danger ml-2" (click)="AcceptQuotation()">Reject</button>
+            <button 
+            (click)='buttonClick1(this.CurrentQuoteID)' 
+            [disabled] = "btnDisabled"
+            class="btn btn-success">TESTING
+            
+            </button>
+          </form>
+
+
+
+ -->
+
+
+
+<!-- <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/checkout">Accept
+            Quotation</button> -->
+
+<!-- <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="AcceptQuotation()">Accept
+              Quotation</button> -->
+<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+<!-- </div>
+      </div>
+    </div>
+  </form>
+</div> -->

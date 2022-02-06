@@ -1,0 +1,78 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+<div class="main-container">
+  ` <br>
+<div class="container" style="width: 90%;">
+  <h1 style="font-size: 35px;">View Designs</h1><br>
+  <br>
+  <div class="wrapper">
+    <table class="table " style=" color:white; background-color: #181818;">
+      <thead class="thead-dark" style="font-size: 16px;">
+        <th>Design ID</th>
+        <th>Design Name</th>
+        <th>Product Type</th>
+        <th>Date Created</th>
+        <th><a routerLink="/products" class="btn btn-outline-success btn-block">Create New</a></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let design of designList">
+          <td>{{design.Design_ID}}</td>
+          <td>{{design.Design_Name}}</td>
+          <!-- <td>{{design.Name}}</td> -->
+          <td>{{design.Product_Type}}</td>
+          <td>{{design.Date_Created | date}}</td>
+          <td>
+            <button mat-raised-button color="primary" class="tfunction" (click)="requestdesigndetails(design.Design_ID)" type="button"
+              class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#designdetails">View Design
+             
+            </button>
+
+         
+
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="designdetails" class="modal fade" role="dialog">
+  <form #QRdetails="ngForm">
+    <div class="modal-dialog modal-lg" role="document" >
+      <div class="modal-content" style="color: black;" style="color: black; background-color: #F0F0F0;">
+       
+        <div class="modal-body">
+          <h1 class="mt-2" style="font-size: 35px;">Design Details</h1> <br><br>
+          <table class="table">
+            <thead>
+              <th>Product Position</th>
+              <th>Job Type</th>
+              <th>Width</th>
+              <th>Height</th>
+              <th>Image</th>
+              <th>Text</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let line of CurrentDesignList">
+                <td>{{line.Template_Position_ID}}</td>
+                <td>{{line.Job_Type}}</td>
+                <td>{{line.Width}}</td>
+                <td>{{line.Height}}</td>
+                <td> <img style="height: 100px; width: 100px;" *ngIf="line.Image" [src]="line.Image"></td>
+                <td>{{line.Text}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+        
+          <button type="button" class="btn btn-danger" mat-raised-button data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</div>

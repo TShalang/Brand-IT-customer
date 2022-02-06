@@ -1,0 +1,123 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="main-container">
+    <div class="container">
+<div class="container">
+    <h1>Customer Orders</h1>
+    <br>
+    <div class="wrapper">
+      <table class="table table-bordered table-striped" style="color: white; background-color: #181818;">
+        <thead class="thead-dark">
+          <th>Customer Order ID</th>
+          <th>Customer Name</th>
+          <th>Date</th>
+          <th>Order Status</th>
+          <th>Total</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of OrderList">
+            <td>{{order.OrderID}}</td>
+            <td>{{order.CustomerName}}</td>
+            <td>{{order.Date | date}} </td>
+            <td>{{order.Orderstatus}}</td>
+            <td>{{order.OrderTotal}}</td>
+            <td><button class="tfunction" (click)="OrderDetails(order.OrderID)" type="button" class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#orderdetail" mat-raised-button color="primary">View </button></td>
+
+
+            
+
+            <!-- <button type="button" class="btn btn-primary" routerLink="/finaliseorder">Finalise Order</button>
+            <button type="button" class="btn btn-primary" routerLink="/capturecollection">Capture collection</button>
+            <button type="button" class="btn btn-primary" routerLink="/returncusorder">Return customer order</button> -->
+
+            
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    
+ <!--Modal-->
+   <!--Modal-->
+   <div id="orderdetail"class="modal fade" role="dialog" >
+    <form #form="ngForm">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Order Details</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <th>Customer Order ID</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let detail of CurrentOrderLines">
+                  <td>{{detail.OrderLineID}}</td>
+                  <td>{{detail.Description}}</td>
+                  <td>{{detail.Quantity}}</td>
+                  <td>R {{detail.Price}}</td>
+                  <td>R {{detail.Total}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            
+            <!-- <button type="button" class="btn btn-primary"   (click)="FinaliseOrder()" data-toggle="modal" data-target="#Modal">Finalise Order</button>
+            <button  type="button" class="btn btn-primary"  (click)="ReceiveOrder()" data-toggle="modal" data-target="#Modals" >Capture collection</button>
+            <button  type="button" class="btn btn-primary"  data-dismiss="modal" routerLink='/createreturn' >Return Order</button> -->
+
+<!-- Modal for finalised order -->
+<div id="Modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title"> Order Finalised </h4>
+  </div>
+  <div class="modal-body">
+    <p>Email sent successfully</p>
+  </div>
+  <div class="modal-footer">
+    <a type="button" class="btn btn-primary"  href="vieworders">Close</a>
+  </div>
+</div>
+  </div></div>
+
+              <!-- Modal for finalised order -->
+<div id="Modals" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Order Collection </h4>
+  </div>
+  <div class="modal-body">
+    <p>Package ready for collection</p>
+  </div>
+  <div class="modal-footer">
+    <a type="button" class="btn btn-primary"  href="vieworders">Close</a>
+  </div>
+</div>
+  </div></div>
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>  
+    </form>
+  </div>  
+    </div>
+  </div>
+</div>

@@ -1,0 +1,227 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="main-container">
+    <div class="container">
+      <a type="button" href="C:\Users\Tshidi\Desktop\Group 11 - Del_08 - Copy\brand-it\KimoCustomer\src\assets\pages\complete-product-design.html"  style="float: right">Go to help</a>
+          
+      <h1>Request a Quote</h1>
+      <div class="row">
+        <div class="column">
+
+           <!--Hint RQ -->
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#RQModal">
+              Hint
+            </button>
+
+            <!-- Complete Modal -->
+            <div class="modal fade" id="RQModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Request a Quote Hint</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" style="color: black;">
+                    To request a quotation, you firstly have to make a design which you will need to select the product type first and select the create design button.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!-- <div class="form-group ">
+              <label for="">Quotation Request Number:</label>
+              <input class="form-control" style="width: 300px" readonly>
+            </div> -->
+            <div class="form-group mt-2">
+              <label>Date:</label>
+              <input class="form-control" style="width: 300px" value="{{TodayDate}}" readonly>
+            </div>
+            <div class="form-group ">
+              <label for="ProdCode">Enter Product Code: </label>
+              <input class="form-control" type="text" id="ProdCode" [(ngModel)]="CurrentRequest.Product_Code"
+                name="Pcode" style="width: 300px" #productCode>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="sel1">Select website visited:</label>
+              <select [(ngModel)]="CurrentRequest.Web_Link_ID" class="form-control" id="sel1" style="width: 300px"
+                #website>
+                <option *ngFor="let weblink of webLinks" [value]="weblink.Web_Link_ID">
+                  {{weblink.Web_Name}}
+                </option>
+              </select>
+            </div> -->
+
+    <div class="form-group">
+              <label for="sel1">Select website visited:</label>
+              <select [(ngModel)]="CurrentRequest.Supplier_ID" class="form-control" id="sel1" style="width: 300px"
+                #website>
+                <option *ngFor="let weblink of supp" [value]="weblink.Supplier_ID">
+                  {{weblink.Supplier_Name}}
+                </option>
+              </select>
+            </div>
+
+          
+
+          
+        </div>
+        
+          <div class="column">
+            <table class="table " style="margin-top: 15px; margin-left: 150px;">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Size</th>
+                  <th>Colour</th>
+                  <th>Website</th>
+                  <th>Product Code</th>
+                  <th>Quantity</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="color: white;" *ngFor="let req of RequestList ; let i = index">
+
+                  <td>{{req.Product_Size_ID}}</td>
+                  <td>{{req.Colour}}</td>
+                  <td>{{req.Supplier_ID}}</td>
+                  <td>{{req.Product_Code}}</td>
+                  <td>{{req.Quantity}}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                </tr>
+              </tbody>
+           
+            </table>
+           
+            <div style="margin-left: 280px;">
+
+              <button type="submit" class="btn-sm btn-primary mt-5" style="width: 500px" (click)="addRequest()">Request Quotation</button>
+            </div>
+        
+        </div>
+      
+      </div>
+
+      <div class="row">
+        <div class="form-group" style="text-align: center;" style="width: 110%;">
+          <div class="dropdown">
+            <button style="width: 300px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select Product Type
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a *ngFor="let item of types" class="dropdown-item"
+                (click)="store(item.Product_Type_ID, item.Name)">{{item.Name}}</a>
+            </div>
+          </div>
+
+        </div>
+        <div *ngIf="designline != null" class="column">
+          <label>Design Name:</label>
+          <table class="table">
+
+            <thead class="thead-dark">
+              <tr>
+                <th>Design Name</th>
+
+                <th>Action</th>
+                <th> <button class="btn btn-outline-success" (click)="navigate()"> Create New Design</button></th>
+              </tr>
+            </thead>
+            <tr style="color: white;" *ngFor="let item of designline">
+              <td>{{item.Design_Name}}</td>
+
+              <td><button class="btn btn-primary btn-sm" (click)="storeDesign(item.Design_ID)"> Select Design</button>
+              </td>
+            </tr>
+          </table>
+
+
+        </div>
+
+
+        <div class="row" style="margin-top: 20px; margin-left: 40px; width: 500px;">
+
+          <div *ngFor="let item of designs">
+            <img class="column" src="{{item.ImageString}}" style="width: 350px; height: 200px;">
+
+            <div class="column" *ngFor="let line of lines"><br>
+              Position: {{line.Position}} <br>
+              Job Type: {{line.JobType}} <br>
+              Text: {{line.Text}} <br>
+              Width: {{line.Width}}cm <br>
+              Height: {{line.Height}}cm <br><br>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+       
+          <div class="form-group">
+            <label for="ProdColor">Enter desired product colour:</label>
+            <input class="form-control" style="width: 300px" type="text" id="ProdColor"
+              [(ngModel)]="CurrentRequest.Colour" name="Pcolor" #color>
+          </div>
+
+          <!-- <label for="ProdCode">Enter Product Code: </label>
+          <input class="form-control" type="text" id="ProdCode" name="Pcode" style="width: 300px"> -->
+          <div class="form-group">
+            <label for="quantity">Enter Desired Quantity:</label>
+            <input class="form-control" style="width: 300px" type="number" id="quantity" name="quantity"
+              [(ngModel)]="CurrentRequest.Quantity" min="1" max="100" #quantity>
+          </div>
+          <div>
+
+            <div class="form-group">
+              <label for="sel1">Select desired size:</label>
+              <select [(ngModel)]="CurrentRequest.Product_Size_ID" class="form-control" style="width: 300px" id="sel1">
+                <option *ngFor="let size of sizes" [value]="size.Product_Size_ID">
+                  {{size.Description}}
+                </option>
+              </select>
+            </div>
+          </div>
+      
+        <button style="width: 300px" type="submit" class="btn-sm btn-success"
+        (click)="addToRequest()">Add to
+        request</button>
+        </div>
+
+      </div>
+   
+
+
+      
+
+    </div>
+   
+
+
+    <!-- <div class="column" >
+    <img src="../../assets/Images/template.png" alt="TshirtTemplate" style="float:left;width:300px;height:250px;">
+    <div class="center">
+    </div>
+        </div> -->
+    <!-- Button trigger modal -->
+  </div>
+ 
+ 
+
+
+
+
+
+
+</div>
