@@ -25,7 +25,18 @@ Users should be able to:
 
 ### Screenshots
 
-![](Images/Login.png)
+<p float="left">
+  <img src="Images/Login.png" width="100" />
+  <img src="Images/Homepage.png" width="100" /> 
+  <img src="Images/CreateD.png" width="100" />
+</p>
+
+<p float="left">
+  <img src="Images/Designs.png" width="100" />
+  <img src="Images/RequestQ.png" width="100" /> 
+  <img src="Images/ViewQ.png" width="100" />
+</p>
+
 
 
 ## My process
