@@ -26,15 +26,15 @@ Users should be able to:
 ### Screenshots
 
 <p float="left">
-  <img src="Images/Login.png" width="100" />
-  <img src="Images/Homepage.png" width="100" /> 
-  <img src="Images/CreateD.png" width="100" />
+  <img src="Images/Login.png" width="400" />
+  <img src="Images/Homepage.png" width="400" /> 
+  <img src="Images/CreateD.png" width="400" />
 </p>
 
 <p float="left">
-  <img src="Images/Designs.png" width="100" />
-  <img src="Images/RequestQ.png" width="100" /> 
-  <img src="Images/ViewQ.png" width="100" />
+  <img src="Images/Designs.png" width="400" />
+  <img src="Images/RequestQ.png" width="400" /> 
+  <img src="Images/ViewQ.png" width="400" />
 </p>
 
 
