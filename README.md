@@ -22,6 +22,8 @@ Users should be able to:
 - Select the product type
 - Design selected product type and save
 - Request a quotation
+- Make payment on quotation (using PayFast)
+- View orders, designs, quotations and quotation requests
 
 ### Screenshots
 
@@ -40,9 +42,6 @@ Users should be able to:
   <img src="Images/ViewQ.png" width="400" />
 </p>
 
-
-
-
 ## My process
 
 ### Built with
@@ -51,10 +50,14 @@ Users should be able to:
 - ASP.NET Framework
 - MSSQL
 - HTML & CSS
+- Bootstrap
+- Angular Material
 
-### What I learned
 
 ### Continued development
+Next steps: 
+- Clean up the code and make it DRY. 
+- Make database live
 
 ## Author
 
